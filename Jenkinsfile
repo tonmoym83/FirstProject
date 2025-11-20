@@ -3,17 +3,17 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                sh 'mvn clean install'
+                bat 'mvn clean install'
             }
         }
         stage('Test') {
             steps {
-                sh 'mvn test'
+                bat 'mvn test'
             }
         }
         stage('Deploy') {
             steps {
-                sh 'scp target/firstproject.jar user@server:/apps/'
+                bat 'scp target/firstproject.jar user@server:/apps/'
             }
         }
     }
